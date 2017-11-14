@@ -1,0 +1,45 @@
+services:
+    trapvincenzo.var_type_check_extension:
+        class: Trapvincenzo\Bundle\VarTypeCheckBundle\Twig\Extension\VarTypeCheckExtension
+        arguments:
+            - '@trapvincenzo.vartypecheck.typer_checker_loader'
+        tags:
+            - { name: twig.extension }
+
+    trapvincenzo.vartypecheck.typer_checker_loader:
+        class: Trapvincenzo\Bundle\VarTypeCheckBundle\Service\TypeCheckerLoader
+
+    trapvincenzo.vartypecheck.typer_checker_string:
+        class: Trapvincenzo\Bundle\VarTypeCheckBundle\Service\Type\StringTypeChecker
+        tags:
+            - { name: trapvincenzo.vartypecheck.type_checker }
+
+    trapvincenzo.vartypecheck.typer_checker_numeric:
+        class: Trapvincenzo\Bundle\VarTypeCheckBundle\Service\Type\NumericTypeChecker
+        tags:
+            - { name: trapvincenzo.vartypecheck.type_checker }
+
+    trapvincenzo.vartypecheck.typer_checker_array:
+        class: Trapvincenzo\Bundle\VarTypeCheckBundle\Service\Type\ArrayTypeChecker
+        tags:
+            - { name: trapvincenzo.vartypecheck.type_checker }
+
+    trapvincenzo.vartypecheck.typer_checker_bool:
+        class: Trapvincenzo\Bundle\VarTypeCheckBundle\Service\Type\BoolTypeChecker
+        tags:
+            - { name: trapvincenzo.vartypecheck.type_checker }
+
+    trapvincenzo.vartypecheck.typer_checker_float:
+        class: Trapvincenzo\Bundle\VarTypeCheckBundle\Service\Type\FloatTypeChecker
+        tags:
+            - { name: trapvincenzo.vartypecheck.type_checker }
+
+    trapvincenzo.vartypecheck.typer_checker_int:
+        class: Trapvincenzo\Bundle\VarTypeCheckBundle\Service\Type\IntTypeChecker
+        tags:
+            - { name: trapvincenzo.vartypecheck.type_checker }
+
+    trapvincenzo.vartypecheck.typer_checker_object:
+        class: Trapvincenzo\Bundle\VarTypeCheckBundle\Service\Type\ObjectTypeChecker
+        tags:
+            - { name: trapvincenzo.vartypecheck.type_checker }
