@@ -42,7 +42,4 @@ services:
 
 
 ### Contribute
-The bundle is open for improvments, new checkers and so on!
-
-### Disclamer
-This is a first version and is working in progress!!
+The bundle is open for improvements, new type checkers and so on!
