@@ -2,10 +2,11 @@
 
 namespace Trapvincenzo\Bundle\VarTypeCheckBundle\DependencyInjection;
 
+use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
-class TrapvincenzoVarTypeCheckCompilerPass extends CompilerPass
+class TrapvincenzoVarTypeCheckCompilerPass implements CompilerPassInterface
 {
     const TYPE_CHECKER_TAG = 'trapvincenzo.vartypecheck.type_checker';
     const TYPE_CHECKER_LOADER_SERVICE_ID = 'trapvincenzo.vartypecheck.typer_checker_loader';
