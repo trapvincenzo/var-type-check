@@ -9,7 +9,7 @@ Var type check is a simple tool that checks if the variables passed inside a tem
 {% varType title expects string %}
 
 {# this is required and needs to be a int #}
-{% varType age expects string %}
+{% varType age expects int required %}
 ```
 
 ## Install
