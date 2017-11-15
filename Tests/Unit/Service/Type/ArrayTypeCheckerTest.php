@@ -1,11 +1,11 @@
 <?php
 
-namespace Trapvincenzo\Bundle\VarTypeCheckBundle\Tests\Unit\Service\Tests;
+namespace Trapvincenzo\Bundle\VarTypeCheckBundle\Tests\Unit\Service\Type;
 
-use Trapvincenzo\Bundle\VarTypeCheckBundle\Service\Type\FloatTypeChecker;
+use Trapvincenzo\Bundle\VarTypeCheckBundle\Service\Type\ArrayTypeChecker;
 use Trapvincenzo\Bundle\VarTypeCheckBundle\Service\Type\TypeCheckerInterface;
 
-class FloatTypeCheckerTest extends BaseTypeCheckerTest
+class ArrayTypeCheckerTest extends BaseTypeCheckerTest
 {
     /**
      * @return array
@@ -14,11 +14,11 @@ class FloatTypeCheckerTest extends BaseTypeCheckerTest
     {
         return [
             [
-                $value = 1.5,
+                $value = [],
                 $expectedResult = true,
             ],
             [
-                $value = 'hey',
+                $value = new \stdClass(),
                 $expectedResult = false,
             ],
             [
@@ -33,6 +33,6 @@ class FloatTypeCheckerTest extends BaseTypeCheckerTest
      */
     public function getInstance()
     {
-        return new FloatTypeChecker();
+        return new ArrayTypeChecker();
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Trapvincenzo\Bundle\VarTypeCheckBundle\Tests\Unit\Service\Tests;
+namespace Trapvincenzo\Bundle\VarTypeCheckBundle\Tests\Unit\Service\Type;
 
 use Trapvincenzo\Bundle\VarTypeCheckBundle\Service\Type\NumericTypeChecker;
 use Trapvincenzo\Bundle\VarTypeCheckBundle\Service\Type\TypeCheckerInterface;

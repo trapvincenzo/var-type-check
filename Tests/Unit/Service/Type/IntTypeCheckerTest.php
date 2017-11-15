@@ -1,11 +1,11 @@
 <?php
 
-namespace Trapvincenzo\Bundle\VarTypeCheckBundle\Tests\Unit\Service\Tests;
+namespace Trapvincenzo\Bundle\VarTypeCheckBundle\Tests\Unit\Service\Type;
 
-use Trapvincenzo\Bundle\VarTypeCheckBundle\Service\Type\ObjectTypeChecker;
+use Trapvincenzo\Bundle\VarTypeCheckBundle\Service\Type\IntTypeChecker;
 use Trapvincenzo\Bundle\VarTypeCheckBundle\Service\Type\TypeCheckerInterface;
 
-class ObjectTypeCheckerTest extends BaseTypeCheckerTest
+class IntTypeCheckerTest extends BaseTypeCheckerTest
 {
     /**
      * @return array
@@ -14,7 +14,7 @@ class ObjectTypeCheckerTest extends BaseTypeCheckerTest
     {
         return [
             [
-                $value = new \stdClass(),
+                $value = 1,
                 $expectedResult = true,
             ],
             [
@@ -22,7 +22,7 @@ class ObjectTypeCheckerTest extends BaseTypeCheckerTest
                 $expectedResult = false,
             ],
             [
-                $value = 1,
+                $value = 1.5,
                 $expectedResult = false,
             ],
         ];
@@ -33,6 +33,6 @@ class ObjectTypeCheckerTest extends BaseTypeCheckerTest
      */
     public function getInstance()
     {
-        return new ObjectTypeChecker();
+        return new IntTypeChecker();
     }
 }
