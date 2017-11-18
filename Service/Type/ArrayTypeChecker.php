@@ -53,7 +53,7 @@ class ArrayTypeChecker extends AbstractType
                 continue;
             }
 
-            if(!$extension->getTypeChecker($definition['type'])->validate($variable[$property])) {
+            if (!$extension->getTypeChecker($definition['type'])->validate($variable[$property])) {
                 return false;
             }
         }

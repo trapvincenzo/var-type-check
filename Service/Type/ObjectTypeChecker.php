@@ -50,7 +50,7 @@ class ObjectTypeChecker extends AbstractType
             $value = null;
 
             $reflect = new \ReflectionClass($variable);
-            $props= $reflect->getProperties(\ReflectionProperty::IS_PUBLIC);
+            $props = $reflect->getProperties(\ReflectionProperty::IS_PUBLIC);
 
             foreach ($props as $prop) {
                 if ($prop->getName() === $property) {
@@ -60,7 +60,7 @@ class ObjectTypeChecker extends AbstractType
             }
 
             if (null === $value) {
-                $methodName = 'get' . ucwords($property);
+                $methodName = 'get'.ucwords($property);
                 if (method_exists($variable, $methodName)) {
                     $value = $variable->$methodName();
                 }
@@ -70,7 +70,7 @@ class ObjectTypeChecker extends AbstractType
                 continue;
             }
 
-            if(!$extension->getTypeChecker($definition['type'])->validate($value)) {
+            if (!$extension->getTypeChecker($definition['type'])->validate($value)) {
                 return false;
             }
         }

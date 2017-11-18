@@ -7,19 +7,19 @@ class VarTypeCheckNode extends \Twig_Node
     /**
      * VarTypeCheckNode constructor.
      *
-     * @param array $line
-     * @param \Twig_Node $name
-     * @param \Twig_Node $type
-     * @param bool $required
+     * @param array                      $line
+     * @param \Twig_Node                 $name
+     * @param \Twig_Node                 $type
+     * @param bool                       $required
      * @param \Twig_Node_Expression|null $structure
-     * @param string|null $tag
+     * @param string|null                $tag
      */
-    public function __construct($line, \Twig_Node $name, \Twig_Node $type, $required = false,\Twig_Node_Expression $structure = null, $tag = null)
+    public function __construct($line, \Twig_Node $name, \Twig_Node $type, $required = false, \Twig_Node_Expression $structure = null, $tag = null)
     {
         $nodes = [
             'name' => $name,
             'type' => $type,
-            'structure' => $structure
+            'structure' => $structure,
         ];
         parent::__construct($nodes, ['required' => $required], $line, $tag);
     }
@@ -58,7 +58,7 @@ class VarTypeCheckNode extends \Twig_Node
             $compiler->raw("throw new \Exception(sprintf(\"%s type does not allow a structure definition\", '$expectedType'));");
             $compiler->write('}');
             $compiler->write("if (!\$validator->validateStructure(\$context['$variableName'], ");
-            $compiler->subcompile($structure) ;
+            $compiler->subcompile($structure);
             $compiler->raw(", \$checker)) {\n");
             $compiler->raw("throw new \Exception(sprintf(\"The structure validation failed for the '%s' variable using the type '%s'\", '$variableName', '$expectedType'));\n");
             $compiler->write('}');

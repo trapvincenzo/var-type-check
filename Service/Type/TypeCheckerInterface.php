@@ -21,15 +21,15 @@ interface TypeCheckerInterface
     /**
      * When true, the user can explicit the structure
      * of the type with an object
-     * eg. type of {keyName: type}
+     * eg. type of {keyName: type}.
      *
      * @return bool
      */
     public function allowStructureDefinition();
 
     /**
-     * @param mixed $variable
-     * @param array $structure
+     * @param mixed                 $variable
+     * @param array                 $structure
      * @param VarTypeCheckExtension $extension
      *
      * @return bool
