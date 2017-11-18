@@ -2,7 +2,7 @@
 
 namespace Trapvincenzo\Bundle\VarTypeCheckBundle\Service\Type;
 
-class NumericTypeChecker implements TypeCheckerInterface
+class NumericTypeChecker extends AbstractType
 {
     /**
      * @param mixed $value

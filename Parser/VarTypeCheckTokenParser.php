@@ -20,6 +20,7 @@ class VarTypeCheckTokenParser extends \Twig_TokenParser
      */
     public function parse(Twig_Token $token)
     {
+        $structure = null;
         $required = false;
         $lineNumber = $token->getLine();
         $stream = $this->parser->getStream();
@@ -31,13 +32,17 @@ class VarTypeCheckTokenParser extends \Twig_TokenParser
         }
         $type = $this->parser->getExpressionParser()->parseAssignmentExpression();
 
+        if ($stream->nextIf(\Twig_Token::NAME_TYPE, 'of')) {
+            $structure = $this->parser->getExpressionParser()->parseExpression();
+        }
+
         if ($stream->nextIf(\Twig_Token::NAME_TYPE, 'required')) {
             $required = true;
         }
 
         $stream->expect(Twig_Token::BLOCK_END_TYPE);
 
-        return new VarTypeCheckNode($lineNumber, $variableToCheck, $type, $required);
+        return new VarTypeCheckNode($lineNumber, $variableToCheck, $type, $required, $structure);
     }
 
     /**

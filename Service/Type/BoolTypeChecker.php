@@ -2,7 +2,7 @@
 
 namespace Trapvincenzo\Bundle\VarTypeCheckBundle\Service\Type;
 
-class BoolTypeChecker implements TypeCheckerInterface
+class BoolTypeChecker extends AbstractType
 {
     /**
      * @param mixed $value
