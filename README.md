@@ -12,6 +12,15 @@ Var type check is a simple tool that checks if the variables passed inside a tem
 {% varType age expects int required %}
 ```
 
+## Structure definition
+Some types (array and object), allow to define a structure of types check using the word `of` followed by an object.
+
+```twig
+... inside the template we declare the requirements
+
+{% varType data expects array of {title: {type: 'string', required: true}, desc: {type: 'string'}} %}
+```
+
 ## Install
 Add to your `AppKernel.php` the following:
 
