@@ -8,9 +8,9 @@ use Trapvincenzo\Bundle\VarTypeCheckBundle\Node\VarTypeCheckNode;
 class VarTypeCheckNodeTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @param bool $required
+     * @param bool        $required
      * @param string|null $structure
-     * @param string $expectedCompiled
+     * @param string      $expectedCompiled
      *
      * @dataProvider provideCompiledCodeIsCorrect
      */
@@ -63,7 +63,7 @@ class VarTypeCheckNodeTest extends \PHPUnit_Framework_TestCase
                 $structure = null,
                 $compiled = 'if (!isset($context[\'title\'])) {throw new \Exception(sprintf("Expected variable %s", \'title\'));}if (isset($context[\'title\'])) {if (!isset($checker)) {$checker = $this->env->getExtension(\'\Trapvincenzo\Bundle\VarTypeCheckBundle\Twig\Extension\VarTypeCheckExtension\');
 }$validator = $checker->getTypeChecker(\'custom\');
-if (!$checker->getTypeChecker(\'custom\')->validate($context[\'title\'])) {throw new \Exception(sprintf("Expected type for the variable %s is %s", \'title\', \'custom\'));}}'
+if (!$checker->getTypeChecker(\'custom\')->validate($context[\'title\'])) {throw new \Exception(sprintf("Expected type for the variable %s is %s", \'title\', \'custom\'));}}',
             ],
             [
                 $required = true,
@@ -72,15 +72,15 @@ if (!$checker->getTypeChecker(\'custom\')->validate($context[\'title\'])) {throw
 }$validator = $checker->getTypeChecker(\'custom\');
 if (!$checker->getTypeChecker(\'custom\')->validate($context[\'title\'])) {throw new \Exception(sprintf("Expected type for the variable %s is %s", \'title\', \'custom\'));}if (!$validator->allowStructureDefinition()) {throw new \Exception(sprintf("%s type does not allow a structure definition", \'custom\'));}if (!$validator->validateStructure($context[\'title\'], , $checker)) {
 throw new \Exception(sprintf("The structure validation failed for the \'%s\' variable using the type \'%s\'", \'title\', \'custom\'));
-}}'
+}}',
             ],
             [
                 $required = false,
                 $structure = null,
                 $compiled = 'if (isset($context[\'title\'])) {if (!isset($checker)) {$checker = $this->env->getExtension(\'\Trapvincenzo\Bundle\VarTypeCheckBundle\Twig\Extension\VarTypeCheckExtension\');
 }$validator = $checker->getTypeChecker(\'custom\');
-if (!$checker->getTypeChecker(\'custom\')->validate($context[\'title\'])) {throw new \Exception(sprintf("Expected type for the variable %s is %s", \'title\', \'custom\'));}}'
-            ]
+if (!$checker->getTypeChecker(\'custom\')->validate($context[\'title\'])) {throw new \Exception(sprintf("Expected type for the variable %s is %s", \'title\', \'custom\'));}}',
+            ],
         ];
     }
 }

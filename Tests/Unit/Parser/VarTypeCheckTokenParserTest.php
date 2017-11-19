@@ -63,5 +63,4 @@ class VarTypeCheckTokenParserTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($type->reveal(), $typeCheckNode->getNode('type'));
         $this->assertEquals($nodeExpression->reveal(), $typeCheckNode->getNode('structure'));
     }
-
 }
