@@ -40,53 +40,52 @@ class ArrayTypeCheckerTest extends BaseTypeCheckerTest
             [
                 $array = [
                     'title' => 'my title',
-                    'description' => 'my description'
+                    'description' => 'my description',
                 ],
                 $structure = [
-                    'title' =>[
+                    'title' => [
                         'type' => 'string',
                         'required' => true,
                     ],
                     'description' => [
-                        'type' => 'string'
-                    ]
+                        'type' => 'string',
+                    ],
                 ],
-                $valid = true
+                $valid = true,
             ],
             [
                 $array = [
                     'title' => 'my title',
                 ],
                 $structure = [
-                    'title' =>[
+                    'title' => [
                         'type' => 'string',
                         'required' => true,
                     ],
                     'description' => [
-                        'type' => 'bool'
-                    ]
+                        'type' => 'bool',
+                    ],
                 ],
-                $valid = true
+                $valid = true,
             ],
             [
                 $array = [
                     'title' => 'my title',
-                    'is_valid' => 'wrong type'
+                    'is_valid' => 'wrong type',
                 ],
                 $structure = [
-                    'title' =>[
+                    'title' => [
                         'type' => 'string',
                         'required' => true,
                     ],
                     'is_valid' => [
-                        'type' => 'bool'
-                    ]
+                        'type' => 'bool',
+                    ],
                 ],
-                $valid = false
-            ]
+                $valid = false,
+            ],
         ];
     }
-
 
     /**
      * @return TypeCheckerInterface

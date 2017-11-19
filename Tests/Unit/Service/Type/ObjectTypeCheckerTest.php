@@ -45,47 +45,47 @@ class ObjectTypeCheckerTest extends BaseTypeCheckerTest
             [
                 $obj,
                 $structure = [
-                    'title' =>[
+                    'title' => [
                         'type' => 'string',
                         'required' => true,
                     ],
                     'description' => [
-                        'type' => 'string'
-                    ]
+                        'type' => 'string',
+                    ],
                 ],
-                $valid = true
+                $valid = true,
             ],
             [
                 $obj2,
                 $structure = [
-                    'title' =>[
+                    'title' => [
                         'type' => 'string',
                         'required' => true,
                     ],
                     'description' => [
-                        'type' => 'string'
-                    ]
+                        'type' => 'string',
+                    ],
                 ],
-                $valid = true
+                $valid = true,
             ],
             [
                 $obj2,
                 $structure = [
-                    'title' =>[
+                    'title' => [
                         'type' => 'string',
                         'required' => true,
                     ],
                     'description' => [
                         'type' => 'string',
-                        'required' => true
-                    ]
+                        'required' => true,
+                    ],
                 ],
-                $valid = false
+                $valid = false,
             ],
             [
                 $obj3,
                 $structure = [
-                    'title' =>[
+                    'title' => [
                         'type' => 'string',
                         'required' => true,
                     ],
@@ -94,14 +94,14 @@ class ObjectTypeCheckerTest extends BaseTypeCheckerTest
                     ],
                     'isVisible' => [
                         'type' => 'string',
-                    ]
+                    ],
                 ],
-                $valid = false
+                $valid = false,
             ],
             [
                 $obj3,
                 $structure = [
-                    'title' =>[
+                    'title' => [
                         'type' => 'string',
                         'required' => true,
                     ],
@@ -110,9 +110,9 @@ class ObjectTypeCheckerTest extends BaseTypeCheckerTest
                     ],
                     'isVisible' => [
                         'type' => 'bool',
-                    ]
+                    ],
                 ],
-                $valid = true
+                $valid = true,
             ],
         ];
     }
@@ -139,7 +139,7 @@ class ObjectTypeCheckerObjectTest
     private $description;
 
     /**
-     * For test sake
+     * For test sake.
      *
      * @var bool
      */

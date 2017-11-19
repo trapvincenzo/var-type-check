@@ -11,7 +11,7 @@ trait StructureDefinitionTestTrait
     /**
      * @param mixed $variable
      * @param array $structure
-     * @param bool $valid
+     * @param bool  $valid
      *
      * @dataProvider provideValidateStructureWorksAsExpected
      */
@@ -21,7 +21,6 @@ trait StructureDefinitionTestTrait
         if (!$validator->allowStructureDefinition()) {
             $this->assertTrue(true);
         } else {
-
             // Argument::any is used to test the wrong cases
             $stringValidator = $this->prophesize(TypeCheckerInterface::class);
             $stringValidator->validate(Argument::any())->will(function ($args) {
@@ -37,9 +36,7 @@ trait StructureDefinitionTestTrait
             $extension->getTypeChecker('string')->willReturn($stringValidator->reveal());
             $extension->getTypeChecker('bool')->willReturn($boolValidator->reveal());
 
-
             $this->assertEquals($valid, $validator->validateStructure($variable, $structure, $extension->reveal()));
         }
     }
-
 }
