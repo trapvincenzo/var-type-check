@@ -1,5 +1,10 @@
 # Var type check for Twig
-Var type check is a simple tool that checks if the variables passed inside a template meet the required types.
+With var type check, is easy to create a list of requirements that the vars passed into a template must meet.
+
+## DSL
+The structure of the check is really simple and expressive
+
+`varType` **nameOfTheVariable** `expects` **type** `required (optional, the default is false)`
 
 ## Example
 ```twig
@@ -13,13 +18,25 @@ Var type check is a simple tool that checks if the variables passed inside a tem
 ```
 
 ## Structure definition
-Some types (array and object), allow to define a structure of types check using the word `of` followed by an object.
+Some types allow to define a structure of types using the word `of` followed by an object.
 
 ```twig
 ... inside the template we declare the requirements
 
 {% varType data expects array of {title: {type: 'string', required: true}, desc: {type: 'string'}} %}
 ```
+
+## Available checkers
+
+| Checker   | Type       |  Allow structure  |
+| -------   | :------:   | :----------------:|
+| `array`   | Array      |  Yes              |
+| `bool`    | Bool       |  No               |
+| `float`   | Float      |  No               |
+| `int`     | Integer    |  No               |
+| `numeric` | Numeric    |  No               |
+| `object`  | Object     |  Yes              |
+| `string`  | String     |  No               |
 
 ## Install
 Add to your `AppKernel.php` the following:
