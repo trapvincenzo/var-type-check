@@ -19,7 +19,7 @@
             "/Tests/"
         ],
         "psr-4": {
-            "Trapvincenzo\\": "src/Trapvincenzo/"
+            "Trapvincenzo\\Bundle\\VarTypeCheckBundle": ""
         }
     },
     "scripts": {
@@ -30,6 +30,5 @@
             "name": "Vincenzo Trapani",
             "email": "trapvincenzo@gmail.com"
         }
-    ],
-    "target-dir": "Trapvincenzo/Bundle/VarTypeCheckBundle"
+    ]
 }
