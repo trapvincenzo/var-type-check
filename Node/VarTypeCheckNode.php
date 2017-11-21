@@ -50,7 +50,7 @@ class VarTypeCheckNode extends \Twig_Node
         $compiler->raw("if (isset(\$context['$variableName'])) {");
         $compiler->write('');
         $compiler->raw('if (!isset($checker)) {');
-        $compiler->raw(sprintf("\$checker = \$this->env->getExtension('\\Trapvincenzo\\Bundle\\VarTypeCheckBundle\\Twig\\Extension\\VarTypeCheckExtension');\n"));
+        $compiler->raw("\$checker = \$this->env->getExtension('\\Trapvincenzo\\Bundle\\VarTypeCheckBundle\\Twig\\Extension\\VarTypeCheckExtension');\n");
         $compiler->raw('}');
         $compiler->raw("\$validator = \$checker->getTypeChecker('$expectedType');\n");
         $compiler->raw("if (!\$checker->getTypeChecker('$expectedType')->validate(\$context['$variableName'])) {");
