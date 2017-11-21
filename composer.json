@@ -19,7 +19,7 @@
             "/Tests/"
         ],
         "psr-4": {
-            "Trapvincenzo\\Bundle\\VarTypeCheckBundle": ""
+            "Trapvincenzo\\Bundle\\VarTypeCheckBundle\\": ""
         }
     },
     "scripts": {
