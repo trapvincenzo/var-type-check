@@ -18,9 +18,12 @@ class VarTypeCheckNode extends \Twig_Node
     {
         $nodes = [
             'name' => $name,
-            'type' => $type,
-            'structure' => $structure,
+            'type' => $type
         ];
+
+        if (null !== $structure) {
+            $nodes['structure'] = $structure;
+        }
         parent::__construct($nodes, ['required' => $required], $line, $tag);
     }
 
@@ -30,7 +33,10 @@ class VarTypeCheckNode extends \Twig_Node
     public function compile(\Twig_Compiler $compiler)
     {
         $required = $this->getAttribute('required');
-        $structure = $this->getNode('structure');
+        $structure = null;
+        if ($this->hasNode('structure')) {
+            $structure = $this->getNode('structure');
+        }
         $variableName = $this->getNode('name')->getNode(0)->getAttribute('name');
 
         if ($required) {
