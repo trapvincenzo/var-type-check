@@ -47,7 +47,7 @@ $bundles[] = new \Trapvincenzo\Bundle\VarTypeCheckBundle\TrapvincenzoVarTypeChec
 Probably you want to enable this bundle only on `dev` and not in `prod`.
 
 ## Create a custom type checker
-If you need to add some custom type checker to your app, it needs to implements the `Trapvincenzo\Bundle\VarTypeCheckBundle\Service\Type\TypeCheckerInterface` and the service needs to be tagged with `trapvincenzo.vartypecheck.type_checker`.
+If you need to add some custom type checker to your app, it needs to implement the `Trapvincenzo\Bundle\VarTypeCheckBundle\Service\Type\TypeCheckerInterface` and the service must be tagged with `trapvincenzo.vartypecheck.type_checker`.
 
 
 ```php
