@@ -65,4 +65,6 @@ class VarTypeCheckTokenParserTest extends \PHPUnit_Framework_TestCase
     }
 }
 
-class MockTwig_TokenStream extends \Twig_TokenStream {}
+class MockTwig_TokenStream extends \Twig_TokenStream
+{
+}

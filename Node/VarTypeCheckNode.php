@@ -18,7 +18,7 @@ class VarTypeCheckNode extends \Twig_Node
     {
         $nodes = [
             'name' => $name,
-            'type' => $type
+            'type' => $type,
         ];
 
         if (null !== $structure) {
