@@ -15,7 +15,7 @@ class VarTypeCheckTokenParserTest extends \PHPUnit_Framework_TestCase
 
     public function testParseWorksCorrectly()
     {
-        $tokenStream = $this->prophesize(\Twig_TokenStream::class);
+        $tokenStream = $this->prophesize(MockTwig_TokenStream::class);
         $tokenStream->nextIf(\Twig_Token::NAME_TYPE, 'of')->willReturn(true);
         $tokenStream->nextIf(\Twig_Token::NAME_TYPE, 'required')->willReturn(true);
         $tokenStream->expect(\Twig_Token::BLOCK_END_TYPE)->shouldBeCalled();
@@ -64,3 +64,5 @@ class VarTypeCheckTokenParserTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($nodeExpression->reveal(), $typeCheckNode->getNode('structure'));
     }
 }
+
+class MockTwig_TokenStream extends \Twig_TokenStream {}

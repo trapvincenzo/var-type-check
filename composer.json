@@ -2,7 +2,9 @@
     "name": "trapvincenzo/var-type-check",
     "description": "Simple var type checker for Twig",
     "require-dev": {
-        "phpunit/phpunit": "^6.4"
+        "phpunit/phpunit": "~4.4",
+        "twig/twig": "^1.35",
+        "symfony/symfony": "^3.3"
     },
     "keywords": [
         "bundle",
